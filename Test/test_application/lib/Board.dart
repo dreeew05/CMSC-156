@@ -41,12 +41,8 @@ class Board extends StatelessWidget {
         isPureBlack = false;
       }
 
-      // Check if white first
-      if (i % 2 == 0) {
-        list.add(buildRow(0, isPureBlack, pieceColor));
-      } else {
-        list.add(buildRow(1, isPureBlack, pieceColor));
-      }
+      // Check if white tile first
+      list.add(buildRow(i % 2, isPureBlack, pieceColor));
     }
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
