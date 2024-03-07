@@ -17,7 +17,19 @@ class _BoxSliderState extends State<BoxSlider> {
 
   double _currVal1 = 0, _currVal2 = 0, _currVal3 = 0;
 
-  void setVal(double newVal, int option) {
+  @override
+  void initState() {
+    super.initState();
+    _setInitVal();
+  }
+
+  void _setInitVal() {
+    _currVal1 = _maxVal / 2;
+    _currVal2 = _maxVal / 2;
+    _currVal3 = _maxVal / 2;
+  }
+
+  void _setVal(double newVal, int option) {
     setState(() {
       switch (option) {
         case 1:
@@ -67,19 +79,19 @@ class _BoxSliderState extends State<BoxSlider> {
                 color: _color1,
                 initVal: _currVal1,
                 maxVal: _maxVal,
-                onValueChanged: (newVal) => setVal(newVal, 1),
+                onValueChanged: (newVal) => _setVal(newVal, 1),
               ),
               CustomSlider(
                 color: _color2,
                 initVal: _currVal2,
                 maxVal: _maxVal,
-                onValueChanged: (newVal) => setVal(newVal, 2),
+                onValueChanged: (newVal) => _setVal(newVal, 2),
               ),
               CustomSlider(
                 color: _color3,
                 initVal: _currVal3,
                 maxVal: _maxVal,
-                onValueChanged: (newVal) => setVal(newVal, 3),
+                onValueChanged: (newVal) => _setVal(newVal, 3),
               ),
             ],
           ),
