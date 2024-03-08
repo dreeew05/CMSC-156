@@ -75,17 +75,35 @@ class _BoxSliderState extends State<BoxSlider> {
         Expanded(
           child: Column(
             children: [
+              const Center(
+                child: Text(
+                  '1st box',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
               CustomSlider(
                 color: _color1,
                 initVal: _currVal1,
                 maxVal: _maxVal,
                 onValueChanged: (newVal) => _setVal(newVal, 1),
               ),
+              const Center(
+                child: Text(
+                  '2nd box',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
               CustomSlider(
                 color: _color2,
                 initVal: _currVal2,
                 maxVal: _maxVal,
                 onValueChanged: (newVal) => _setVal(newVal, 2),
+              ),
+              const Center(
+                child: Text(
+                  '3rd box',
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
               CustomSlider(
                 color: _color3,
