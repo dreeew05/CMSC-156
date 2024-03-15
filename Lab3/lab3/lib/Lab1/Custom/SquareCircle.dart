@@ -4,10 +4,16 @@ import 'package:lab3/Lab1/Shapes/Square.dart';
 
 class SquareCircle extends StatelessWidget {
   const SquareCircle(
-      {required this.squareColor, required this.circleColor, super.key});
+      {required this.squareSize,
+      required this.circleSize,
+      required this.squareColor,
+      required this.circleColor,
+      super.key});
 
-  static const double squareSize = 45;
-  static const double circleSize = 35;
+  // static const double squareSize = 45;
+  // static const double circleSize = 35;
+  final double squareSize;
+  final double circleSize;
   final Color squareColor;
   final Color circleColor;
 

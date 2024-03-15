@@ -5,14 +5,18 @@ import 'package:lab3/Lab1/Shapes/Square.dart';
 class Board extends StatelessWidget {
   const Board({super.key});
   static const double squareSize = 45;
+  static const double circleSize = 35;
 
   Row buildRow(int isWhiteFirst, bool isPureBlack, Color pieceColor) {
     List<Widget> list = [];
     for (int i = 0; i < 8; i++) {
       if (i % 2 == isWhiteFirst) {
         if (!isPureBlack) {
-          list.add(
-              SquareCircle(squareColor: Colors.black, circleColor: pieceColor));
+          list.add(SquareCircle(
+              squareColor: Colors.black,
+              circleColor: pieceColor,
+              squareSize: squareSize,
+              circleSize: circleSize));
         } else {
           list.add(const Square(color: Colors.black, size: squareSize));
         }
