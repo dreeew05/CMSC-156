@@ -4,8 +4,8 @@ import 'package:lab3/Lab1/Shapes/Square.dart';
 
 class Board extends StatelessWidget {
   const Board({super.key});
-  static const double squareSize = 45;
-  static const double circleSize = 35;
+  static const double squareSize = 50;
+  static const double circleSize = 40;
 
   Row buildRow(int isWhiteFirst, bool isPureBlack, Color pieceColor) {
     List<Widget> list = [];

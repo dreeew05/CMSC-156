@@ -1,51 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:lab3/Lab1/Board.dart';
-import 'package:lab3/painter.dart';
+import 'package:lab3/description.dart';
+import 'package:lab3/pageFactory.dart';
 
-class Lab1 extends StatelessWidget {
-  const Lab1({super.key});
+class Lab1 extends CustomPage {
+  const Lab1({super.key, required super.title});
 
   @override
   Widget build(BuildContext context) {
-    Painter painter = Painter();
-    return MaterialApp(
-        home: DefaultTabController(
+    const String descriptionText =
+        "This is a simple app that demonstrates the use of the CustomPainter widget. The app draws a chess board.";
+    return DefaultTabController(
       length: 2,
       child: Scaffold(
-          appBar: AppBar(
-            title: Text(
-              'Lab Activity 1',
-              style: TextStyle(color: painter.getTextColor()),
-            ),
-            bottom: TabBar(
-                labelColor: painter.getTextColor(),
-                indicatorColor: painter.getTextColor(),
-                tabs: const [
-                  Tab(
-                    text: 'Output',
-                  ),
-                  Tab(
-                    text: 'Description',
-                  )
-                ]),
-            leading: IconButton(
-              icon: Icon(
-                Icons.arrow_back,
-                color: painter.getTextColor(),
-              ),
-              onPressed: () => Navigator.pop(context),
-            ),
-            centerTitle: true,
-            backgroundColor: painter.getAppColor(),
-          ),
+          appBar: super.generateAppBar(context),
           body: const TabBarView(children: [
             Center(
               child: Board(),
             ),
             Center(
-              child: Text('Hello World'),
+              child: Padding(
+                  padding: EdgeInsets.only(left: 20, right: 20),
+                  child: Padding(
+                      padding: EdgeInsets.all(5),
+                      child: Description(descriptionText: descriptionText))),
             )
           ])),
-    ));
+    );
   }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lab3/Lab1/lab1.dart';
-import 'package:lab3/Lab2/Lab2.dart';
+import 'package:lab3/pageFactory.dart';
 import 'package:lab3/painter.dart';
 
 void main() {
@@ -15,6 +14,13 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Painter painter = Painter();
+    PageFactory pageFactory = PageFactory();
+
+    Map<int, String> labTitles = {
+      1: 'Lab 1 Activity - Checkerboard',
+      2: 'Lab 2 Acitivity - Sliders'
+    };
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -30,26 +36,32 @@ class HomePage extends StatelessWidget {
         children: [
           ElevatedButton(
             onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const Lab1()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          pageFactory.createPage(1, labTitles[1]!)));
             },
             style: ElevatedButton.styleFrom(
                 backgroundColor: painter.getAppColor()),
             child: Text(
-              'Go to Lab 1',
+              labTitles[1]!,
               style: TextStyle(color: painter.getTextColor()),
             ),
           ),
           const Padding(padding: EdgeInsets.all(20)),
           ElevatedButton(
             onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const Lab2()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          pageFactory.createPage(2, labTitles[2]!)));
             },
             style: ElevatedButton.styleFrom(
                 backgroundColor: painter.getAppColor()),
             child: Text(
-              'Go to Lab 2',
+              labTitles[2]!,
               style: TextStyle(color: painter.getTextColor()),
             ),
           ),
