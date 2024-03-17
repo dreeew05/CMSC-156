@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 
 class Painter {
-  final Color _APPBAR_COLOR = Colors.deepPurple.shade300;
-  final Color _TEXT_COLOR = Colors.white;
-
   getAppColor() {
-    return _APPBAR_COLOR;
+    return Colors.deepPurple.shade300;
   }
 
   getTextColor() {
-    return _TEXT_COLOR;
+    return Colors.white;
   }
 }
