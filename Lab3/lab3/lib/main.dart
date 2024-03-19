@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
 
     Map<int, String> labTitles = {
       1: 'Lab 1 Activity - Checkerboard',
-      2: 'Lab 2 Acitivity - Sliders'
+      2: 'Lab 2 Acitivity - Manipulating Bars'
     };
 
     return Scaffold(
